@@ -1,0 +1,102 @@
+<template>
+    <template if:false={isGuestUser}>
+        <div class="slds-grid slds-wrap" data-id="navMenu">
+            <div class={logoDivClass}>
+                <div class="slds-m-horizontal_large slds-m-vertical_small">
+                    <a href={homePageURL}>
+                        <img  src={logoURL} width={width} height={height}/>
+                    </a>
+                </div>
+            </div>
+            <template if:true={isTopLeft}>
+                <div class={myProfileDivClass}>
+                    <div class="slds-m-horizontal_large slds-m-vertical_small" align="right"></div>
+                </div>
+            </template>
+            <div class={navMenuDivClass}>
+                <div data-id="navMenuPaddingDiv" class="slds-m-around_large">
+                    <nav>
+                        <ul class="nav">
+                            <template for:each={navigationMenuItems} for:item="navigationMenuItem">
+                                <li key={navigationMenuItem.id} class="menuItem">
+                                    <a class="menuLabel" href={navigationMenuItem.pageURL} target={navigationMenuItem.target}>{navigationMenuItem.label}</a>
+                                    <template if:true={navigationMenuItem.subNavigationMenuItems}>
+                                        <span class="slds-icon_container slds-icon-utility-switch" style="padding-left: 0.2rem">
+                                            <svg data-name="switchIcon" class="slds-icon switchIcon" style={iconStyle}>
+                                                <use xlink:href={switchIconURL}></use>
+                                            </svg>
+                                        </span>
+                                        <ul class="subMenu">
+                                            <template for:each={navigationMenuItem.subNavigationMenuItems} for:item="navigationSubMenuItem">
+                                                <li key={navigationSubMenuItem.id} class="subMenuItem slds-p-horizontal_small slds-p-vertical_xx-small">
+                                                    <a class="menuLabel" href={navigationSubMenuItem.pageURL} target={navigationSubMenuItem.target}>{navigationSubMenuItem.label}</a>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </template>
+                                    <template if:true={navigationMenuItem.moreNavigationMenuItems}>
+                                        <span class="slds-icon_container slds-icon-utility-switch" style="padding-left: 0.2rem">
+                                            <svg data-name="switchIcon" class="slds-icon switchIcon" style={iconStyle}>
+                                                <use xlink:href={switchIconURL}></use>
+                                            </svg>
+                                        </span>
+                                        <ul class="moreMenu">
+                                            <template for:each={navigationMenuItem.moreNavigationMenuItems} for:item="navigationMoreMenuItem">
+                                                <li key={navigationMoreMenuItem.id} class="subMenuItem slds-p-horizontal_small slds-p-vertical_xx-small">
+                                                    <a class="menuLabel" href={navigationMoreMenuItem.pageURL} target={navigationMoreMenuItem.target}>{navigationMoreMenuItem.label}</a>
+                                                    <span class="slds-icon_container slds-icon-utility-chevronright" style="float: right; padding-top: 0.2rem">
+                                                        <svg data-name="chevronRightIcon" class="slds-icon chevronRightIcon" style={iconStyle}>
+                                                            <use xlink:href={chevronRightIconURL}></use>
+                                                        </svg>
+                                                    </span>
+                                                    <template if:true={navigationMoreMenuItem.subNavigationMenuItems}>
+                                                        <ul>
+                                                            <template for:each={navigationMoreMenuItem.subNavigationMenuItems} for:item="navigationSubMenuItem">
+                                                                <li key={navigationSubMenuItem.id} class="subMenuItem slds-p-horizontal_small slds-p-vertical_xx-small">
+                                                                    <a class="menuLabel" href={navigationSubMenuItem.pageURL} target={navigationSubMenuItem.target}>{navigationSubMenuItem.label}</a>
+                                                                </li>
+                                                            </template>
+                                                        </ul>
+                                                    </template>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </template>
+                                </li>
+                            </template>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <template if:true={isLeft}>
+                <div class={myProfileDivClass}>
+                    <div class="slds-m-around_large" style="float: right;">
+                        <!--<span class="slds-icon_container slds-icon-action-user" style="float: right; padding-top: 0.2rem">
+                            <svg data-name="userIcon" class="slds-icon userIcon" style="width: 15px; height: 16px;">
+                                <use xlink:href={userIconURL}></use>
+                            </svg>
+                        </span>-->
+                        <!--<div class="profileMenu">
+                            <img src="/sfsites/c/profilephoto/005/T" class="profileIcon">
+                            <div class="menu-content">
+                                <ul class="nav">
+                                    <li class="slds-p-horizontal_small slds-p-vertical_xx-small"><a href="#">My Profile</a></li>
+                                    <li class="slds-p-horizontal_small slds-p-vertical_xx-small"><a href="#">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>-->
+                        <img src="/sfsites/c/profilephoto/005/T" class="profileIcon" name="profileIcon" onclick={showProfileMenu}>
+                        <ul class="profileMenu hide">
+                            <li class="subMenuItem slds-p-horizontal_small slds-p-vertical_xx-small">
+                                <a class="menuLabel" href={myProfileURL}>My Profile</a>
+                            </li>
+                            <li class="subMenuItem slds-p-horizontal_small slds-p-vertical_xx-small">
+                                <a class="menuLabel" href="/secur/logout.jsp">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

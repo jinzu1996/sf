@@ -1,0 +1,37 @@
+<template>
+    <!--Complete header section-->
+    <!--Vertical Table look-->
+    <template if:true={childShowVertical}>
+        <div class="slds-card__header">
+            <!--Main Header-->
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title ">
+                    <span>{childPageHeader}</span>
+                </h2>
+            </div>
+            <!--Title-->
+            <div class="slds-card__body">
+                <span>
+                    {childPageTitle}
+                </span>
+            </div>
+        </div>
+    </template>
+
+<!--Horizontal Table look-->
+    <template if:false={childShowVertical}>
+        <div class="slds-card__header">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title slds-align_absolute-center">
+                    <span>{childPageHeader}</span>
+                </h2>
+            </div>
+            <!--Title-->
+            <div class="slds-card__body">
+                <span>
+                    {childPageTitle}
+                </span>
+            </div>
+        </div>
+    </template>
+</template>

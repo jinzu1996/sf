@@ -1,0 +1,45 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 09-08-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div class="slds-page-header slds-page-header_record-home" data-id="navMenu" >
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <!-- <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:contact" size="medium" alternative-text="Contact"></lightning-icon>
+                    </div> -->
+                    <div class="slds-media__body" style="line-height: 13px;">
+                        <span class="menuLabelColo">{objectApiName}</span>
+                        <span class="menuLabelColo slds-page-header__title slds-truncate" title={nameField}>{nameField}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-page-header__row slds-page-header__row_gutters " >
+            <div class="slds-page-header__col-details ">
+                <lightning-record-view-form
+                        record-id={recordId}
+                        object-api-name={objectApiName}>
+
+                    <ul class="slds-page-header__detail-row menuLabelColo1" style="padding-left: 12px;" data-id="navMenu1">
+                        <template for:each={fieldList} for:item="field" for:index="index">
+                            <li key={field} class="slds-page-header__detail-block">
+                                <div class="sf">
+                                    <lightning-output-field field-name={field} style="padding:0;"></lightning-output-field>
+                                </div>
+                            </li>
+                        </template>
+                    </ul>
+                </lightning-record-view-form>
+            </div>
+        </div>
+        <!-- <c-custom-detail-page objectName={objectApiName} fieldSet={fieldSet}> </c-custom-detail-page> -->
+        <!-- <c-custom-detail-page sf={fieldSet} fg={objectApiName}> </c-custom-detail-page> -->
+
+    </div>
+</template>

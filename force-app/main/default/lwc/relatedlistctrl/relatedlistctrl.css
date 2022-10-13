@@ -1,0 +1,13 @@
+.under
+{
+    width: 320px;
+    border: 1px solid gray;
+    /* margin-bottom: 30px; */
+    display: flex;
+    font-weight: bold;
+}
+
+.container {
+  /* display: flex;
+  justify-content : space-between;   */
+}

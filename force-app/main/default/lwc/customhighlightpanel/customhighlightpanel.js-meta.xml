@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Customhighlightpanel</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordAction</target>
+        <target>lightning__Tab</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage">
+            <property name="objectApiName" type="String" label="objectApiName"/>
+            <property name="recordId" type="String" label="Record Id"/>
+            <property name="fieldSet" type="String" label="Field Set"/>
+            <!-- <property type="Color" name="bgColour" label="highlight header Background Colour" default="rgb(255, 255, 255)"/> -->
+            <!-- <property type="Color" name="bgColor1" label="highlight Body Background Colour" default="rgb(255, 255, 255)"/> -->
+            <!-- <property type="Integer" name="menuLabelSize" label="highlight Label Font Size (px)" default="13" description="Enable to make menu lables bold"/>
+            <property type="Boolean" name="menuLabelBold" label="Bold"   default="false" description="Enable to make menu lables bold" /> -->
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="objectApiName" type="String" label="objectApiName"/>
+            <property name="recordId" type="String" label="Record Id"/>
+            <property name="fieldSet" type="String" label="Field Set"/>
+            <!-- <property type="Color" name="bgColour" label="highlight header Background Colour" default="rgb(255, 255, 255)"/> -->
+            <!-- <property type="Color" name="bgColor1" label="highlight Body Background Colour" default="rgb(255, 255, 255)"/> -->
+            <!-- <property type="Integer" name="menuLabelSize" label="highlight Label Font Size (px)" default="13" description="Enable to make menu lables bold"/>
+            <property type="Boolean" name="menuLabelBold" label="Bold"   default="false" description="Enable to make menu lables bold" /> -->
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="objectApiName" type="String" label="objectApiName"/>
+            <property name="recordId" type="String" label="Record Id"/>
+            <property name="fieldSet" type="String" label="Field Set"/>
+            <!-- <property type="Color" name="bgColour" label="highlight header Background Colour" default="rgb(255, 255, 255)"/> -->
+            <!-- <property type="Color" name="bgColor1" label="highlight Body Background Colour" default="rgb(255, 255, 255)"/> -->
+            <!-- <property type="Integer" name="menuLabelSize" label="highlight Label Font Size (px)" default="13" description="Enable to make menu lables bold"/>
+            <property type="Boolean" name="menuLabelBold" label="Bold"   default="false" description="Enable to make lables bold" /> -->
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

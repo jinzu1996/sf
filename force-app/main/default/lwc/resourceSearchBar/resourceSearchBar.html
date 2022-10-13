@@ -1,0 +1,16 @@
+<template>
+    <!--<section for:each={resourceList} for:item="rsc" key={rsc.id}>
+        <div >
+            {rsc.Name}
+            Child Comp
+        </div>
+    </section>-->
+    <div class="slds-p-top_large">
+        <lightning-input type="text"
+            placeholder={childPhSearchBox}
+            variant="label-hidden"
+            value={searchString}
+            onchange={handleStringSearch}>
+        </lightning-input>
+    </div>
+</template>

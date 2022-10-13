@@ -1,0 +1,71 @@
+.container { position: relative; }
+.container .slds-avatar { display: block; }
+.container .ld-edit { position: absolute;top: 0px; right: 50px;}
+.container {
+    height: 100px;
+    width: 100px;
+    align-self: center;
+}
+.slds-avatar{
+    height: 100px;
+    width: 100px;
+    align-self: center;
+}
+.under
+{
+    width: 320px;
+    border: 1px solid gray;
+    /* margin-bottom: 30px; */
+    display: flex;
+    font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content : space-between;  
+}
+.profile-edit-fields{
+/*     outline: 0;
+    border-color: rgb(21, 137, 238); 
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 0 #b7d1e7; */
+    /* box-shadow: 0 0 3px #0070d2;  */
+    /* This is the blue color of the shadow */
+		/* font-family: cursive; */
+    font-weight: bold;
+    /* font-size: 40px; */
+    border-color: rgb(21, 137, 238);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 0 #b7d1e7;
+}
+.profi{
+    
+        font-weight: bold;
+        /* font-size: 40px; */
+        border-color: rgb(21, 137, 238);
+       /* background-color: rgb(255, 255, 255); */
+        box-shadow: 0 1px 0 #b7d1e7;
+    }
+.profile-input-field{
+    width: 80%
+}
+
+input
+{
+    border: 1px solid #00000080 !important;
+}
+label
+{
+    position: relative;
+    top: 15px;
+    left: 20px;
+    background-color: white;
+    z-index: 9999;
+}
+a
+{
+    float: right;
+    position: relative;
+    bottom: 40px;
+    right: 2%;
+}

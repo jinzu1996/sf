@@ -1,0 +1,31 @@
+<template>
+    <div align = 'right'>
+    <lightning-layout>
+        <lightning-layout-item padding="around-small" flexibility="auto" >
+            <div class="slds-grid slds-wrap" >
+                <span class="slds-p-horizontal_x-small" title="First Page">
+                    <a onclick={handleFirst}><lightning-icon icon-name="utility:jump_to_left" alternative-text='Next Page'  size="x-small"></lightning-icon></a>
+                </span>
+                <span class="slds-p-horizontal_x-small" title="Previous Page">
+                    <a onclick={handlePrev}><lightning-icon icon-name="utility:chevronleft" alternative-text='Next Page'  size="x-small"></lightning-icon></a>
+                </span>
+                
+            <template for:each={pageList} for:item="item">                  
+              <div key={item.Id}>             
+                    <span class="slds-p-horizontal_x-small" title="Current Page">
+                        <a onclick={handleCurrentPage} name={item}>{item}</a>
+                    </span>                                 
+              </div>
+            </template>
+            <span class="slds-p-horizontal_x-small" title="Next Page">
+                <a onclick={handleNext}><lightning-icon icon-name="utility:chevronright" alternative-text='Next Page'  size="x-small"></lightning-icon></a>
+            </span> 
+            <span class="slds-p-horizontal_x-small" title="Last Page">
+                <a onclick={handleLast}><lightning-icon icon-name="utility:jump_to_right" alternative-text='Last Page'  size="x-small"></lightning-icon></a>
+            </span> 
+            
+             </div>
+        </lightning-layout-item>
+    </lightning-layout>
+</div>
+</template>

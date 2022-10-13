@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Case Form</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property 
+                type="String" 
+                name="title" 
+                label="Form Title" 
+                default="Create Case"
+            />
+            <property 
+                type="Color" 
+                name="titleColor" 
+                label="Title Color" 
+                default="rgb(0, 0, 0)"
+            />
+            <property 
+                type="Color" 
+                name="labelColor" 
+                label="Field Label Color" 
+                default="rgb(0, 0, 0)"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,7 @@
+.horizontal-view-thumbnail {
+    object-fit: cover;
+}
+
+.slds-card__body{
+    background-color: rgb(241, 236, 236);
+}

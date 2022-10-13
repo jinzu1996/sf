@@ -1,0 +1,16 @@
+<template>
+    <div align = "center">
+        <div class="container slds-m-top_large" >
+            <span class="slds-avatar slds-avatar_circle slds-avatar_large">
+            <img alt="Person name" src={photoUrl} title="Person name" />
+            </span>
+            <template if:true={profileImageLoading}>
+                <lightning-spinner
+                alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </template>
+            <a href="#" onclick = {openfileUploadedit} > <lightning-icon icon-name="utility:edit" class = "ld-edit" alternative-text="Edit" title="Edit" size="xx-small"></lightning-icon></a>
+            
+        </div>
+        </div>
+</template>

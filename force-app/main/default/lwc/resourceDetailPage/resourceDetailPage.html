@@ -1,0 +1,109 @@
+<template>
+    <template if:false={getHelpPage}>
+        <template if:false={childresourceDetailNavagationToNewTab}>
+        <!--This will open the detail page on same tab.-->
+            <div class="slds-p-horizontal_xx-large horizontal-line_bottom">
+                <div class="slds-grid slds-m-around_x-small">
+                    <div class="slds-size_1-of-5 slds-text-color_destructive slds-text-heading_large underline-solid">
+                        <h1>{resourceDetail.Name}</h1>
+                    </div>
+                    <div class="slds-size_3-of-5"></div>
+                    <div class="slds-col slds-float_right slds-size_1-of-5" >
+                        <lightning-button 
+                            variant="brand-outline" 
+                            label="<< Back To Previous Article"  
+                            title="Back To Previous Article" 
+                            onclick={goToResourcePage}
+                            class="slds-m-top_xx-large">
+                        </lightning-button>
+                    </div>
+                </div>
+
+                <div>
+                    <lightning-formatted-rich-text
+                        value={resourceDetail.Thumbnail__c} 
+                        class="horizontal-view-thumbnail">
+                    </lightning-formatted-rich-text>
+                </div>
+
+                <div class="slds-text-color_destructive underline-rigde">
+                    {resourceDetail.Type__c} 
+                        <lightning-icon 
+                            icon-name="utility:event" 
+                            alternative-text="Calendar"
+                            size="xx-small" 
+                            title="Article Published Date"
+                            class="slds-p-left_small slds-p-right_xx-small cal-icon">
+                        </lightning-icon>
+                    {PublishedDate}
+                </div>
+
+                <div class="slds-p-top_xx-small ">
+                    <lightning-formatted-rich-text
+                        value={resourceDetail.Description__c}>
+                    </lightning-formatted-rich-text>          
+                </div>
+            </div>
+
+            <div class="slds-p-around_xx-large slds-text-heading_medium">
+            Still Need Help?
+            <lightning-button 
+                    variant="brand-outline" 
+                    label="Get Help"  
+                    title="Back To Previous Article" 
+                    onclick={getHelpHandler}
+                    class="slds-p-left_small">
+                </lightning-button>
+            </div>
+        </template>
+
+        <!--Opens in a New Tab -->
+        <template if:true={childresourceDetailNavagationToNewTab}>
+            <!--This will open the detail page on new tab-->
+            <div class="slds-p-horizontal_xx-large horizontal-line_bottom">
+                <div class="slds-grid slds-m-around_x-small">
+                    <div class="slds-size_1-of-5 slds-text-color_destructive slds-text-heading_large underline-solid">
+                        <h1>{resourceDetail.Name}</h1>
+                    </div>
+                    <div class="slds-size_4-of-5"></div>
+                </div>
+
+                <div>
+                    <lightning-formatted-rich-text
+                        value={resourceDetail.Thumbnail__c} 
+                        class="horizontal-view-thumbnail">
+                    </lightning-formatted-rich-text>
+                </div>
+
+                <div class="slds-text-color_destructive underline-rigde">
+                    {resourceDetail.Type__c}
+                </div>
+
+                <div>
+                    {resourceDetail.CreatedDate}
+                </div>
+
+                <div class="slds-p-top_xx-small">
+                    <lightning-formatted-rich-text
+                        value={resourceDetail.Description__c}>
+                    </lightning-formatted-rich-text>          
+                </div>
+            </div>
+
+            <div class="slds-p-around_xx-large slds-text-heading_medium">
+                Still Need Help?
+                <lightning-button 
+                    variant="brand-outline" 
+                    label="Get Help"  
+                    title="Back To Previous Article" 
+                    onclick={getHelpHandler}
+                    class="slds-p-left_small">
+                </lightning-button>
+            </div>
+        </template>
+    </template>
+
+    <template if:true={getHelpPage}>
+        Support Form
+    </template>
+</template>

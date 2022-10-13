@@ -1,0 +1,99 @@
+<template>
+    <!--childShowVertical Handles the page visibility. If true show the Figma Page2. Vertical View.-->
+    <template if:true={childShowVertical}>
+        <template for:each={showResultChild} for:item="res">
+            <lightning-card key={res.Id} size="3" class="slds-var-p-around_x-small">
+                <div class="slds-grid slds-m-around_x-small">
+
+                    <div class="slds-col slds-size_1-of-5 slds-m-right_x-small">
+                        <!-- Resource Image Cards -->                        
+                        <lightning-formatted-rich-text 
+                            value={res.Thumbnail__c}>
+                        </lightning-formatted-rich-text>                        
+                    </div>
+
+                    <div class="slds-col slds-size_4-of-5 slds-m-right_x-small">
+                        <!-- Resource Details -->                                 
+                        <div class="slds-media__body">
+
+                            <p class="slds-var-m-bottom_xx-small slds-m-bottom_small">
+                                {res.Type__c}
+                            </p>
+
+                            <p class="slds-text-heading_small slds-m-bottom_small">
+                                {res.Name}
+                            </p>
+
+                            <div class="slds-line-clamp_medium">
+                                <lightning-formatted-rich-text
+                                    value={res.Description__c}>
+                                </lightning-formatted-rich-text>
+                            </div>
+
+                            <div if:true={res.Description__c}>
+                                <lightning-button 
+                                    variant="base" 
+                                    label="Read More..." 
+                                    title="Click to read comlete article"
+                                    alignmentbump="bottom"
+                                    value={res.Id} 
+                                    onclick={readMoreAction}>
+                                </lightning-button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </lightning-card>
+        </template>
+    </template>
+
+<!--childShowVertical Handles the page visibility. If false, show the Figma Page1-->
+    <template if:false={childShowVertical}>
+        <div class="slds-card__body_inner">
+            <lightning-layout class="slds-card__body" multiple-rows="true" pull-to-boundary="small">
+                
+                <template for:each={showResultChild} for:item="res">
+                    <lightning-layout-item key={res.Id} size="4" class="slds-var-p-around_x-small">
+                        <!-- Start horizontal view tile -->
+                        <div class="slds-card" style="height:250px">
+                            <lightning-card>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-size_1-of-3 horizontal-view-thumbnail">
+                                        <lightning-formatted-rich-text 
+                                            value={res.Thumbnail__c} 
+                                            class="horizontal-view-thumbnail">
+                                        </lightning-formatted-rich-text>
+                                    </div>
+                                    <div class="slds-col slds-size_2-of-3 slds-var-p-left_small">
+                                        <p>{res.Type__c}</p>
+                                        <h1><b>{res.Name}</b></h1>
+                                        <div class="slds-line-clamp_medium">
+                                            <lightning-formatted-rich-text
+                                                value={res.Description__c}>
+                                            </lightning-formatted-rich-text>
+                                        </div>
+                                        <div if:true={res.Description__c}>
+                                            <lightning-button 
+                                                variant="base" 
+                                                label="Read More..." 
+                                                title="Click to read comlete article"
+                                                alignmentbump="bottom"
+                                                value={res.Id} 
+                                                onclick={readMoreAction}>
+                                            </lightning-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </lightning-card>
+                        </div>
+                        <!-- End horizontal view tile -->
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </template>
+
+</template>

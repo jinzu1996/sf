@@ -1,0 +1,26 @@
+.underline-solid {
+    padding-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 2.0px;
+    width: fit-content;
+}
+
+/**Detail Page border line**/
+.horizontal-line_bottom {
+    padding-bottom: 5px;
+    border-bottom-style: solid;
+    border-bottom-width: 2.0px;
+}
+
+.underline-rigde {
+    padding-bottom: 5px;
+    border-bottom-style: ridge;
+    border-bottom-width: 2.0px;
+    width: fit-content;
+}
+
+/**calendar icon css**/
+.cal-icon {
+    --sds-c-icon-color-foreground-default: #c23934;
+    --sds-c-icon-color-background: #ffffff;
+}

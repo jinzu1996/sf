@@ -1,0 +1,79 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 08-17-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+        <!-- <div style="padding-left: 60rem;">
+            <lightning-button-icon icon-name="utility:edit" alternative-text="update value" variant="bare" size="medium" onclick={handleClick} ></lightning-button-icon>
+        </div> -->
+        <!-- <lightning-record-view-form
+                    record-id={recordId}
+                    object-api-name={objectName} onsuccess={handleSuccess} onsubmit={validateFields} onerror={handleError} >
+                    <lightning-messages data-id="message">
+                    </lightning-messages>
+            <div class="slds-box slds-theme_default">
+                <template if:true={fields}>
+                    <template for:each={fields} for:item="f">
+                       <div key={f.Id} class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name={f.APIName}>
+                        </lightning-output-field>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </lightning-record-view-form> -->
+
+        <template if:false={isShow}>
+            <lightning-card>
+            <lightning-record-view-form
+                    record-id={recordId}
+                    object-api-name={objectName} onsuccess={handleSuccess} onsubmit={validateFields} onerror={handleError} >
+                    <lightning-messages data-id="message">
+                    </lightning-messages>
+            <div class="slds-box slds-theme_default">
+                <template if:true={fields}>
+                    <template for:each={fields} for:item="f">
+                       <div key={f.Id} class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name={f.APIName}>
+                        </lightning-output-field>
+                        </div>
+                    </template>
+                </template>
+            </div>
+            </lightning-record-view-form>
+            </lightning-card>
+        </template>
+
+
+        <template if:true={isShow}>
+            <lightning-card>
+            <lightning-record-edit-form record-id={recordId} object-api-name={objectName} 
+              onsuccess={handleSuccess} onsubmit={validateFields} onerror={handleError}>
+            <lightning-messages data-id="message">
+            </lightning-messages>
+                <div class="slds-grid slds-wrap">
+                <template if:true={fields}>
+                    <template for:each={fields} for:item="f">
+                       <div key={f.Id} class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name={f.APIName}>
+                        </lightning-input-field>
+                        </div>
+                    </template>
+                </template>
+                </div>
+            <lightning-button type="submit" variant="brand" label="Save" onclick={saveClick}></lightning-button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <lightning-button  variant="brand" label="Cancel" onclick={handleCancel}></lightning-button>
+
+
+            </lightning-record-edit-form>
+            </lightning-card>
+        </template>
+
+        <!-- <lightning-button type="submit" variant="brand" label="Save" onclick={saveClick}></lightning-button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <lightning-button  variant="brand" label="Cancel" onclick={handleCancel}></lightning-button> -->
+
+
+</template>

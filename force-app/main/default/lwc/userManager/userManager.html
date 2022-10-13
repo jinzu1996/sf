@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col-buttons slds-size_1-of-6">
+            <button type="submit" onclick = {handleProfileCard} class="slds-button slds-m-around_small slds-button_brand slds-button_stretch"><lightning-icon icon-name="utility:user" alternative-text={profileLabel} title={profileLabel} size="small"></lightning-icon>{profileLabel}</button>
+            <button type="submit" onclick = {handleFilesCard} class="slds-button slds-m-around_small slds-button_brand slds-button_stretch"><lightning-icon icon-name="utility:identity" alternative-text={filesLabel} title={filesLabel} size="small"></lightning-icon>{filesLabel}</button>
+        </div>
+        
+        <div class="slds-col slds-size_5-of-6 slds-theme_shade">
+            <div class = "slds-m-around_medium">
+            <template if:true={showprofile}>
+                <c-user-profile profilelabel = {profileLabel} fieldset = {userFieldSet}></c-user-profile>
+            </template>
+            <template if:true={showfiles}>
+                <c-user-files fileslabel = {filesLabel}
+                            filesperpage = {filesPerPage}
+                            maxfilesize  = {maxFileSize}></c-user-files>
+            </template>
+            </div>
+        </div>
+
+    </div>
+</template>

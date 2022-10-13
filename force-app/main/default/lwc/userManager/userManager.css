@@ -1,0 +1,24 @@
+button
+{
+    background-color: #BE266A;
+    border: #BE266A;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #fff;
+    width:95%;
+    padding:10px 0;
+    display:block
+}
+.slds-col-buttons{
+    background-color: #0d0334;
+}
+
+.slds-button_brand .slds-icon_container svg.slds-icon-text-default {
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1;
+    fill: #fff!important;
+    margin-right: 8px;
+}

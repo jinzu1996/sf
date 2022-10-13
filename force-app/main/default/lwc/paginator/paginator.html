@@ -1,0 +1,46 @@
+<template >
+    <div if:true={allSearchResult}>
+        Showing {currentPageNo} of {totalPages}
+
+        <!--NAVIGATION : Le-->
+        <lightning-button-icon 
+            icon-name="utility:jump_to_left" 
+            variant="bare" 
+            size="medium" 
+            alternative-text="Previous Page" 
+            onclick={handlePreviousPage}
+            disabled={disablePrevious}>
+        </lightning-button-icon>
+
+
+        <!--NAVIGATION : By Selective Page Number-->
+        <span>
+            <a onclick={onSelectivePageClick} name=1>1 </a>
+        </span>
+
+        <template for:each={pageList} for:item="item" >
+            <a key={item} onclick={onSelectivePageClick} name={item}>{item} </a>
+        </template>
+        
+        <!--Total pages to display is less than five. -->
+        <span if:true={pageSizeGreaterFive}>
+            <a>...</a>           
+        </span>
+
+        <span if:true={pageSizeOne}>
+            <a onclick={onSelectivePageClick} name={totalPages}>{totalPages}</a>
+        </span>
+
+        
+        <!--NAVIGATION : Next-->
+        <lightning-button-icon 
+            icon-name="utility:jump_to_right" 
+            variant="bare" 
+            size="medium" 
+            alternative-text="Next Page" 
+            onclick={handleNextPage}
+            disabled={disableNext}>
+        </lightning-button-icon>
+
+    </div>
+</template>

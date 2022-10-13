@@ -1,0 +1,137 @@
+<template>
+    <!--View 1, when user set the value from design attribute (showVertical)-->
+    <!--Full Page-->
+    <template if:true={showVertical}>
+        <!--showResourceDetail: Used to show the resource detail.-->
+        <div if:false={showResourceDetail} class="slds-theme_default slds-brand-band slds-brand-band_none">
+            <div class="slds-grid slds-m-around_x-small">
+                <!--Left Panel-->
+                <div class="slds-col slds-size_1-of-5 slds-m-right_x-small">
+                    <!--Child Component - Search Bar-->
+                    <form>
+                        <c-resource-search-bar 
+                            ongetsearchvalue={handleSearchValue}
+                            child-ph-search-box={phSearchBox}>
+                        </c-resource-search-bar>
+                        <!--Child Component - Filters-->
+                        <c-resource-filter-section
+                            ongetsearchvalue={handleSearchValue}
+                            onresetevent={handleResetEvent}
+                            child-ph-category={phCategory}
+                            child-ph-sub-category={phSubCategory}
+                            child-submit-button-label={submitButtonLabel}
+                            child-submit-button-color={submitButtonColor}
+                            child-reset-button-label={resetButtonLabel}
+                            child-reset-button-color={resetButtonColor}
+                            child-show-vertical={showVertical}>
+                        </c-resource-filter-section>
+                    </form>
+                </div>
+                <!--Right Panel-->
+                <div class="slds-col slds-size_4-of-5 slds-theme_shade">
+                    <!--Content Division-->
+                    <div class="slds-m-left_medium slds-m-top_medium">
+                        <!--Child Component - Page header & title-->
+                        <c-resource-header 
+                            child-page-header={pageHeader}
+                            child-page-title={pageTitle}
+                            child-show-vertical={showVertical}>
+                        </c-resource-header>
+
+                        <div if:true={showTable}>
+                            <!--Child Component - Result Table-->
+                            <c-resource-result-table 
+                                show-result-child={recordsPerPage}
+                                onshowresourcedetail={showResDetailAction}
+                                child-show-vertical={showVertical}>
+                                
+                            </c-resource-result-table>
+
+                            <!--Paginator Component-->
+                            <c-paginator
+                                all-search-result={searchResult}
+                                onpaginationaction={handlePaginationEvent}
+                                child-rec-count-per-page={recCountPerPage}>
+                            </c-paginator>
+                        </div>
+                        <!-- Message in case no result found -->
+                        <div if:false={showTable}>
+                            <!--{noResultMessage}--> <span class="slds-align_absolute-center">{noResourceFound}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div if:true={showResourceDetail}>
+            <c-resource-detail-page
+                child-sel-res-rec={selectedResourceRec}
+                childresource-detail-navagation-to-new-tab={navigationTypeNewTab}
+                onshowresourcemainpageevent={goBackToResResultPage}>
+            </c-resource-detail-page>
+        </div>
+    </template>
+
+    <!--View 2, when user set the value from design attribute (Horizontal)-->
+    <template if:false={showVertical}>
+        <div if:false={showResourceDetail} class="slds-brand-band slds-brand-band_none">
+            <div class="slds-grid slds-gutters slds-align_absolute-center">
+                <c-resource-header 
+                    child-page-header={pageHeader}
+                    child-page-title={pageTitle}
+                    child-show-vertical={showVertical}>
+                </c-resource-header>
+            </div>
+            <!-- Horizontal View Filters -->
+            <div class="slds-grid slds-gutters slds-align_absolute-center">
+                <div class="slds-col ">
+                    <c-resource-search-bar 
+                        ongetsearchvalue={handleSearchValue}
+                        child-ph-search-box={phSearchBox}>
+                    </c-resource-search-bar>
+                </div>
+                <div class="slds-col ">
+                       <!--Child Component - Filters-->
+                       <c-resource-filter-section
+                            ongetsearchvalue={handleSearchValue}
+                            onresetevent={handleResetEvent}
+                            child-ph-category={phCategory}
+                            child-ph-sub-category={phSubCategory}
+                            child-submit-button-label={submitButtonLabel}
+                            child-submit-button-color={submitButtonColor}
+                            child-reset-button-label={resetButtonLabel}
+                            child-reset-button-color={resetButtonColor}
+                            child-show-vertical={showVertical}>
+                       </c-resource-filter-section>
+                </div>
+            </div>
+            <div if:true={showTable}>
+                    <!--Child Component - Result Table-->
+                    <c-resource-result-table 
+                        show-result-child={recordsPerPage}
+                        onshowresourcedetail={showResDetailAction}
+                        child-show-vertical={showVertical}>
+                    </c-resource-result-table>
+
+                    <!--Paginator Component-->
+                    <c-paginator
+                        all-search-result={searchResult}
+                        onpaginationaction={handlePaginationEvent}
+                        child-rec-count-per-page={recCountPerPage}>
+                    </c-paginator>
+            </div>
+            <!-- Message in case no result found -->
+            <div if:false={showTable}>
+                <span class="slds-align_absolute-center">{noResourceFound}</span>
+            </div>
+        </div>
+        <div if:true={showResourceDetail}>
+            <c-resource-detail-page
+                child-sel-res-rec={selectedResourceRec}
+                childresource-detail-navagation-to-new-tab={navigationTypeNewTab}
+                onshowresourcemainpageevent={goBackToResResultPage}>
+            </c-resource-detail-page>
+        </div>
+    </template>
+
+</template>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__Tab</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="showVertical"  
+                        type="Boolean"
+                        description="Enter True or False" 
+                        label="Vertical view?" 
+                        default="True"/>
+            <property name="resourceDetailNavagationToNewTab"  
+                        type="Boolean" 
+                        label="Resource Detail Page Navagation to NewTab" 
+                        default="False"/>
+            <property name="recCountPerPage"  
+                        type="String" 
+                        label="No of records per page" 
+                        default="5"/>
+            <property name="pageHeader" 
+                        type="String" 
+                        label="Page Header"/>
+            <property name="pageTitle"  
+                        type="String" 
+                        label="Page Title" 
+                        default="Here you'll find handly documentation about our APIs And SDKs for our Feeds and Chat products"/>
+            <property name="phSearchBox" 
+                        type="String" 
+                        label="Search Box Placeholder" 
+                        default="Enter String to search"/>
+            <property name="phCategory"  
+                        type="String" 
+                        label="Category Filter Placeholder" 
+                        default="Select Category"/>
+            <property name="phSubCategory"  
+                        type="String" 
+                        label="Sub-Categroy Filter Placeholder" 
+                        default="Select Sub Category"/>
+            <property name="submitButtonLabel"  
+                        type="String" 
+                        label="Submit Button Label" 
+                        default="Submit"/>
+            <property name="submitButtonColor"  
+                        type="String" 
+                        label="Submit Button Color" 
+                        default="Brand"/>
+            <property name="resetButtonLabel"  
+                        type="String" 
+                        label="Reset Button Label" 
+                        default="Reset"/>
+            <property name="resetButtonColor"  
+                        type="String" 
+                        label="Reset Button Color" 
+                        default="destructive"/>
+            <property name="noResourceFound"  
+                        type="String" 
+                        label="No Resource Found Text" 
+                        default="No Result Found !"/>
+           <!-- <property name="pageAllignment"  
+                        type="String" 
+                        label="Vertical/Horizontal Align Page?" 
+                        default="Left"/> -->
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

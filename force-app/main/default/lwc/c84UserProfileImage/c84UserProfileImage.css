@@ -1,0 +1,13 @@
+.container { position: relative; }
+.container .slds-avatar { display: block; }
+.container .ld-edit { position: absolute; bottom:0; right:0; }
+.container {
+    height: 100px;
+    width: 100px;
+    align-self: center;
+}
+.slds-avatar{
+    height: 100px;
+    width: 100px;
+    align-self: center;
+}

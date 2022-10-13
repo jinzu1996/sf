@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+        <isExposed>true</isExposed>
+    <masterLabel>Dynamic Form</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property 
+                type="String" 
+                name="title" 
+                label="Form Title" 
+                default="Create Case"
+            />
+            <property 
+                type="String" 
+                name="objectAPIName" 
+                label="Object API Name"
+                description="Please enter the API name of the object"
+            />
+            <property 
+                type="String" 
+                name="fieldSetAPIName" 
+                label="Fieldset API Name"
+                description="Please enter the API name of the fieldset"
+            />
+            <property 
+                type="String" 
+                name="requiredFields" 
+                label="Required Fields"
+                description="Enter API name of the fields seperated by comma (,)"
+            />
+            <property 
+                type="Integer" 
+                name="column" 
+                label="No. of Columns"
+                default="2"
+            />
+            <property 
+                type="String" 
+                name="submitButtonLabel" 
+                label="Submit Button Label"
+                default="Submit"
+            />
+            <!--<property 
+                type="Color" 
+                name="submitButtonColor" 
+                label="Submit Button Color" 
+            />-->
+            <property 
+                type="String" 
+                name="cancelButtonLabel" 
+                label="Cancel Button Label"
+                default="Cancel"
+            />
+            <!--<property 
+                type="Color" 
+                name="cancelButtonColor" 
+                label="Cancel Button Color" 
+            />-->
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

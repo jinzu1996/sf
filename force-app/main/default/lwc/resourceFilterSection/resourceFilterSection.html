@@ -1,0 +1,96 @@
+<template>
+    <!--Vertical view-->
+    <template if:true={childShowVertical}>
+        <!--Show Filter options when picklist options are loaded-->
+        <template if:true={catPicklistOptions.values}>
+            <!--Filter 1:-->
+            <lightning-combobox
+                name="Category"
+                label="Category"
+                value={catSelectedValue}
+                placeholder={childPhCategory}
+                options={catPicklistOptions}
+                onchange={catChangeHandler}
+                class="slds-m-top_small">
+            </lightning-combobox>
+            <!--Filter 2:-->
+            <lightning-combobox
+                name="Sub Category"
+                label="Sub Category"
+                value={subCatSelectedValue}
+                placeholder={childPhSubCategory}
+                options={dependedntSubCatOps}
+                onchange={subCatChangeHandler}
+                class="slds-m-top_small">
+            </lightning-combobox>
+            <!--Filter Buttons-->
+            <div class="slds-grid slds-m-top_large">
+                <div class="slds-col slds-size_1-of-3" >
+                    <lightning-button 
+                        variant={childResetButtonColor} 
+                        label={childResetButtonLabel} 
+                        title="Submit Reset" 
+                        onclick={handleReset} 
+                        type="reset"
+                        class="slds-m-top_xx-large">
+                    </lightning-button>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-button 
+                        variant={childSubmitButtonColor} 
+                        label={childSubmitButtonLabel} 
+                        title="Submit search" 
+                        onclick={handleSubmit} 
+                        class="slds-m-top_xx-large">
+                    </lightning-button>
+                </div>
+                <div class="slds-col slds-size_1-of-3"></div>
+            </div>
+        </template>
+    </template>
+
+    <!--Horizontal view-->
+    <template if:false={childShowVertical}>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <!--Filter 1:-->
+                <lightning-combobox
+                    name="Category"
+                    value={catSelectedValue}
+                    placeholder='Category'
+                    options={catPicklistOptions}
+                    onchange={catChangeHandler}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col">
+                <lightning-combobox
+                    name="Sub Category"
+                    value={subCatSelectedValue}
+                    placeholder='Sub-Category'
+                    options={dependedntSubCatOps}
+                    onchange={subCatChangeHandler}>
+                </lightning-combobox>
+            </div>
+            <!--
+            <div class="slds-col" >
+                <lightning-button 
+                    variant={childResetButtonColor} 
+                    label={childResetButtonLabel} 
+                    title="Submit Reset" 
+                    onclick={handleReset} 
+                    type="reset"
+                    disabled="">
+                </lightning-button>
+            </div>
+            <div class="slds-col">
+                <lightning-button 
+                    variant={childSubmitButtonColor} 
+                    label={childSubmitButtonLabel} 
+                    title="Submit search" 
+                    onclick={handleSubmit}>
+                </lightning-button>
+            </div>
+            -->
+        </div>
+    </template>
+</template>

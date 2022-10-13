@@ -1,0 +1,16 @@
+.slds-form-element_horizontal .slds-form-element__label, .slds-form_horizontal .slds-form-element .slds-form-element__label, .slds-form_stacked .slds-form-element_horizontal .slds-form-element__label
+  {
+    max-width: 100%;
+    
+  }
+  .sf
+  {
+    
+  }
+.s1
+{
+  padding-left : 0%;
+}
+.lightning-formatted-text.slds-form-element__static {
+  font-family: 'cursive' important;
+}

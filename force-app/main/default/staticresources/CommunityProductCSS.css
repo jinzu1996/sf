@@ -1,0 +1,123 @@
+.section-content.community_layout-section_section {
+padding: 0 !important;
+}
+.interactions-component.webruntimedesign-componentWrapper_componentWrapper {
+min-height: 0 !important
+}
+/*li {
+cursor: pointer;
+}
+.slds-popover {
+position: absolute;
+display: block;
+width: 10rem;
+top: 50%;
+}
+.slds-popover__body {
+padding: 0;
+}
+.slds-nubbin_top-left:after, .slds-nubbin_top-left:before {
+display: none;
+}
+.subMenuItems {
+display: none;
+}
+.menuItem:hover .subMenuItems {
+display: block;
+}
+.subMenuItems li:hover {
+background: #f3f3f3;
+}
+.menuItem:hover .switchIcon {
+transform: rotate(180deg);
+}*/
+.slds-form-element_horizontal .slds-form-element__label, .slds-form_horizontal .slds-form-element .slds-form-element__label, .slds-form_stacked .slds-form-element_horizontal .slds-form-element__label
+{
+max-width: 100%;
+
+}
+.slds-form-element_horizontal .slds-form-element__control, .slds-form_horizontal .slds-form-element .slds-form-element__control, .slds-form_stacked .slds-form-element_horizontal .slds-form-element__control
+{
+padding-left: 0%;
+}
+.menuItem:hover .switchIcon {
+	transform: rotate(180deg);
+}
+.subMenuItem:hover .chevronRightIcon {
+	transform: rotate(180deg);
+}
+.profileIcon {
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    vertical-align: middle;
+	margin-bottom: 0.3rem;
+	cursor: pointer;
+}
+nav ul {
+	margin: 0;
+	padding:0;
+	list-style: none;
+}
+.nav a {
+	text-decoration: none !important;
+	position: relative;
+}
+.nav {  
+	vertical-align: top; 
+	display: inline-block;
+}
+.nav li{position: relative;}
+.nav > li { 
+	float:left; 
+	margin-right: 1px; 
+}
+.nav ul {
+	position: absolute;
+	white-space: nowrap;
+	z-index: 1;
+	left: -99999em;
+	box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.2);
+	border-radius: 0.2rem;
+}
+.nav > li:hover > ul {
+	left: auto;
+	*padding-top: 5px  ;
+	width: 10rem;
+}
+.nav > li li:hover > ul { 
+	left: 100%;
+	top: 0;
+}
+.nav > li li ul {
+    *border-left: 1px solid #fff;
+}
+li:first-child {
+	border-top-left-radius: .2rem;
+	border-top-right-radius: .2rem;
+}
+li:last-child {
+	border-bottom-left-radius: .2rem;
+	border-bottom-right-radius: .2rem;
+}
+.profileMenu ul  {
+	box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.2);
+}
+.profileMenu {
+	position: absolute;
+	white-space: nowrap;
+	z-index: 1;
+	margin-left: -5.5rem;
+    width: 7rem;
+	box-shadow: 0px 8px 25px 0px rgba(0,0,0,0.2);
+}
+.profileMenu a {
+	text-decoration: none !important;
+	position: relative;
+}
+.profileMenu li:hover, .subMenu li:hover, .moreMenu li:hover{
+    font-weight: bold;
+}
+.hide {
+	display: none;
+}

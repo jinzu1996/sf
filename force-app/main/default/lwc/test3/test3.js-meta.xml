@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Dynamic form 1 - FieldSet 1</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__RecordAction</target>
+        <target>lightning__Tab</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage">
+            <property name="objectName" type="String" label="Object Name"/>
+            <!-- <property name="recordId" type="String" label="Record Id"/> -->
+            <property name="fieldSet" type="String" label="Fieldset API Name"/>
+            <!-- <property type="Integer" name="column" label="No. of Columns" default="2"/> -->
+            <property type="String" name="fontFamily" label="Font Family" description="Font type of menu labels" />
+            <property label="No. of Columns" name="col" type="String" datasource="1,2,3" default="2"/>
+
+
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="objectName" type="String" label="Object Name"/>
+            <!-- <property name="recordId" type="String" label="Record Id"/> -->
+            <property name="fieldSet" type="String" label="Fieldset API Name"/>
+            <!-- <property type="Integer" name="column" label="No. of Columns" default="2"/> -->
+            <property type="String" name="fontFamily" label="Font Family" description="Font type of menu labels" />
+            <property label="No. of Columns" name="col" type="String" datasource="1,2,3" default="2"/>
+
+
+        </targetConfig>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="objectName" type="String" label="Object Name"/>
+            <!-- <property name="recordId" type="String" label="Record Id"/> -->
+            <property name="fieldSet" type="String" label="Fieldset API Name"/>
+            <!-- <property type="Integer" name="column" label="No. of Columns" default="2"/> -->
+            <property type="String" name="fontFamily" label="Font Family" description="Font type of menu labels" />
+            <property label="No. of Columns" name="col" type="String" datasource="1,2,3" default="2"/>
+            <!-- <property label="No. of Col" name="col" type="Integer" datasource="1, 2, 3" default="2"/> -->
+
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

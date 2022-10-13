@@ -1,0 +1,51 @@
+<template>
+    <template if:false={isSuccess}>
+        <div class="slds-p-around_xx-large">
+            <lightning-record-edit-form
+                object-api-name={objectAPIName}
+                onsuccess={handleSuccess}>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_1-of-1">
+                        <div class="slds-m-around_x-small">
+                            <div data-id="title" class="slds-text-heading_large">{title}</div>
+                        </div>
+                    </div>
+                    <template if:true={fields}>
+                        <template for:each={fields} for:item="field">
+                            <div key={field.Id} class={sizeClass}>
+                                <div class="slds-m-around_x-small">
+                                    <lightning-input-field 
+                                        field-name={field.APIName}
+                                        variant="label-stacked"
+                                        required={field.IsRequired}>
+                                    </lightning-input-field>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <div class="slds-float_right slds-p-around_x-small">
+                    <lightning-button
+                        label={submitButtonLabel}
+                        variant="brand"
+                        class={submitButtonClass}
+                        name="submit"
+                        type="submit">
+                    </lightning-button>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </template>
+    <template if:true={isSuccess}>
+        <div class="slds-p-around_xx-large slds-align_absolute-center">
+            <div class="slds-m-around_large thankyou" align="center">
+                <img src={successIconURL} class="success"/>
+                <p style="font-size:25px;color:#142149;font-weight:800;">Thank You!</p>
+                Your Submission has been received. Our team</br>will be reaching out to you shortly.
+                <br/>
+                <br/>
+              <!--<p><a onclick={formPageURL} class="thankyou-cta">Submit another {objectAPIName}</a></p>-->
+            </div>
+        </div>
+    </template>
+</template>

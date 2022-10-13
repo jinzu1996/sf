@@ -1,0 +1,68 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-11-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title={titleWithCount} icon-name="standard:record">
+        <lightning-button label="New" slot="actions" onclick={createNew}></lightning-button>
+            <div slot="footer">
+            <div  if:true={countBool}>
+            <lightning-button label="View All" onclick={navigateToRelatedList}></lightning-button>
+            </div>
+            </div>
+        <div class="slds-m-around_medium ">
+            <div class="container" if:true={listRecords}>
+                <template for:each={listRecords} for:item="rec">
+                    <div key={rec.Id} class=" under">
+                        <!-- <lightning-datatable data={listRecords} columns={columns} key-field="id"   hide-checkbox-column="true" ></lightning-datatable> -->
+                        <lightning-record-view-form record-id={rec.Id} object-api-name={objectName}>
+                            <div class="slds-grid ">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-output-field field-name={field1}></lightning-output-field>
+                                    <lightning-output-field field-name={field2}></lightning-output-field>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <lightning-output-field field-name={field3}></lightning-output-field>
+                                    <lightning-output-field field-name={field4}></lightning-output-field>
+                                </div>
+                            </div>
+                        </lightning-record-view-form><br/><br/>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+
+    <!-- <lightning-layout class="slds-m-top_x-small">
+        <article class="slds-card lightning-card">
+            <div class="slds-card__header slds-grid slds-theme_shade">
+              <header class="slds-media slds-media_center slds-has-flexi-truncate ">
+                <div class="slds-media__figure">
+                    <lightning-icon icon-name="standard:record" size="small"></lightning-icon>
+                </div>
+                <div class="slds-media__body">
+                  <h2 class="slds-card__header-title">
+                    <a class="slds-card__header-link" onclick={handleGotoRelatedList}>{titleWithCount}</a>
+                  </h2>
+                </div>
+                <div class="slds-no-flex">
+                    <lightning-button label="New" onclick={createNew}></lightning-button>
+                </div>
+              </header>
+            </div>
+            <template if:true={listRecords}>
+                <div>
+                    <lightning-datatable key-field="Id" class="related-list"  onrowaction={handleRowAction} columns={columns} data={listRecords}  hide-checkbox-column="true"   resize-column-disabled="true">   </lightning-datatable>   
+                </div>
+                <footer class="slds-card__footer">
+                    <a onclick={handleGotoRelatedList}>View All</a>
+                </footer>                            
+            </template>
+          </article>                       
+    </lightning-layout> -->
+</template>

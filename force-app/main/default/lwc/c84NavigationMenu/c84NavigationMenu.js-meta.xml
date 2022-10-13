@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Navigation Menu</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property 
+                type="ContentReference" 
+                name="logoID" 
+                label="Logo" 
+                filter="cms_image"
+            />
+            <property 
+                name="currentLogoPosition" 
+                label="Logo Position" 
+                type="String" 
+                datasource="Left,Top-Left"
+            />
+            <property 
+                type="Integer" 
+                name="width" 
+                label="Width of a Logo (px)" 
+                default="200"
+            />
+            <property 
+                type="Integer" 
+                name="height" 
+                label="Height of a Logo (px)" 
+                default="200"
+            />
+            <property 
+                type="Color" 
+                name="bgColor" 
+                label="Main Menu Background Color" 
+                default="rgb(255, 255, 255)"
+            />
+            <property 
+                type="Color" 
+                name="bgColorSubMenu" 
+                label="Sub Menu Background Color" 
+                default="rgb(255, 255, 255)"
+            />
+            <property 
+                type="Color" 
+                name="borderColor" 
+                label="Border Color" 
+                default="rgb(0, 0, 0)"
+            />
+            <property 
+                type="String" 
+                name="menuName" 
+                label="Navigation Menu Name" 
+                datasource="apex://C84_NavigationLinkSetPickList"
+            />
+            <property 
+                type="Integer" 
+                name="maxMenuItems" 
+                label="Max Items to Display"
+                default="2"
+            />
+            <property 
+                type="String" 
+                name="fontFamily" 
+                label="Font Family"
+                description="Font type of menu labels"
+            />
+            <property 
+                type="Integer" 
+                name="menuLabelSize" 
+                label="Menu Label Font Size (px)"
+                default="13"
+                description="Enable the checkbox to make menu lables bold"
+            />
+            <property 
+                type="Color" 
+                name="menuLabelColor" 
+                label="Menu Label Color"
+                default="rgb(0, 0, 0)"
+            />
+            <property 
+                type="Boolean" 
+                name="menuLabelBold" 
+                label="Bold"
+                default="false"
+                description="Enable the checkbox to make menu lables bold"
+            />
+            <property 
+                type="Color" 
+                name="activeMenuBarColor" 
+                label="Active Menu Bar Color"
+                default="rgb(27, 150, 255)"
+            />
+            <property 
+                type="Integer" 
+                name="horizontalPadding" 
+                label="Space between Menu Labels (px)" 
+                default="24"
+                description="Horizontal padding between 'Menu Labels'"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,15 @@
+<template>
+    <div class="progress-area slds-m-top_medium">
+        <lightning-icon icon-name={iconName} alternative-text="File" title="File" size="x-small"></lightning-icon>
+        <p><b>{progresstext}</b></p>
+        <!--<template if:true={spinner}>
+        <lightning-spinner
+                alternative-text="Loading..." variant="brand">
+        </lightning-spinner>
+        </template>-->
+        <template if:true={progressring}>
+        <lightning-progress-ring value={fileuploadprogress}> </lightning-progress-ring>
+        </template>
+        <p align = "right"><a href="#" onclick = {handleClose} > <lightning-icon icon-name="utility:close" alternative-text="Home" title="Home" size="xx-small"></lightning-icon></a></p>
+    </div>
+</template>

@@ -1,0 +1,52 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 10-03-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card> 
+        <lightning-tabset>
+            <lightning-tab style="font-weight:bold;" label= "Details">
+                <div class="slds-p-around_xx-large">
+                    <lightning-record-edit-form
+                    object-api-name={objectName}   onsuccess={handleSuccess}  record-id={recordId}>
+                    <div class="slds-grid slds-wrap">
+                    <template for:each={fields} for:item="field">
+                      <div key={field.Id} class={sizeClass}>
+                        <div class="slds-m-around_x-small">
+                        <lightning-input-field  class = "profile-edit-fields men" read-only={isReadOnly} field-name={field} ></lightning-input-field>
+                        <template if:true={isReadOnly}>
+                           <a href="#" onclick = {handleEditField} > <lightning-icon icon-name="utility:edit" class = "ld-edit"  alternative-text="Edit" title="Edit" size="xx-small"></lightning-icon></a>
+                        </template>
+                        </div>
+                      </div>
+                    </template>    
+                    <template if:false={isReadOnly}>
+                      <div class="slds-align_absolute-center">
+                        <lightning-button class="slds-var-m-top_small" type="submit" variant="brand" label="Save">
+                        </lightning-button>
+                        <lightning-button class="slds-var-m-top_small" type="submit" label="Cancel">
+                        </lightning-button>
+                      </div>
+                      
+                    </template>
+                  </div>
+                  </lightning-record-edit-form>
+               </div>
+            </lightning-tab>
+            <lightning-tab  style="font-weight:bold ;" label="Related" title="2nd tab extended title">
+              <c-related-list 
+              record-id={accountId}
+              sobject-api-name="Contact"
+              related-field-api-name="AccountId"
+              sorted-by="LastName, FirstName"
+              fields="Name, Title, Email, Phone"
+              columns={contactColumns}>
+          </c-related-list>
+            </lightning-tab>
+        </lightning-tabset>
+    
+    </lightning-card>
+ </template>
