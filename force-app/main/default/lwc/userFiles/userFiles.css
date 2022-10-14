@@ -40,6 +40,6 @@ button
     border: 1px solid grey;
 }
 
-.slds-input[readonly]{
-    border: 1px solid #76716b!important;
+.slds-input{
+    border:1px solid #000!important
 }

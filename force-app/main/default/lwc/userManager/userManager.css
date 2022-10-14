@@ -15,10 +15,13 @@ button
     background-color: #0d0334;
 }
 
-.slds-button_brand .slds-icon_container svg.slds-icon-text-default {
+button[c-usermanager_usermanager] .slds-icon_container svg.slds-icon {
     width: 1.2rem;
     height: 1.2rem;
     line-height: 1;
     fill: #fff!important;
     margin-right: 8px;
+}
+.slds-button+.slds-button{
+    margin-left: 12px;
 }

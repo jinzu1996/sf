@@ -34,10 +34,29 @@ label
     background-color: white;
     z-index: 9999;
 }
-a
+.slds-form_horizontal a
 {
     float: right;
     position: relative;
-    bottom: 40px;
+    bottom: 43px;
     right: 2%;
+}
+
+div[c-userprofile_userprofile] .slds-form-element__control .slds-input{
+    border: 1px solid #76716b;
+    padding: 5px 12px 0px 12px;
+    font-size: 16px;
+}
+
+div[c-userprofile_userprofile].slds-form-element__control .slds-input:focus{
+    box-shadow: none!important;
+}
+div[c-userprofile_userprofile] button{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+.slds-form_horizontal .slds-form-element .slds-form-element_readonly{
+    margin-bottom: -0.5rem;
 }

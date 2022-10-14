@@ -1,76 +1,46 @@
 <template>
-    <p><a href={communityHome} > <lightning-icon icon-name="utility:home" alternative-text="Home" title="Home" size="xx-small"></lightning-icon></a> / {profilelabel}</p>
+    <p><a href={communityHome}>
+            <lightning-icon icon-name="utility:home" alternative-text="Home" title="Home" size="xx-small">
+            </lightning-icon>
+        </a> / {profilelabel}</p>
     <article class="slds-card">
-          
-        <!--<div align = "center">
-        <div class="container slds-m-top_large" >
-            <span class="slds-avatar slds-avatar_circle slds-avatar_large">
-            <img alt="Person name" src={photoUrl} title="Person name" />
-            </span>
-            <template if:true={profileImageLoading}>
-                <lightning-spinner
-                alternative-text="Loading..." variant="brand">
-                </lightning-spinner>
-            </template>
-            <a href="#" onclick = {openfileUploadedit} > <lightning-icon icon-name="utility:edit" class = "ld-edit" alternative-text="Edit" title="Edit" size="xx-small"></lightning-icon></a>
-            
-        </div>
-        </div>-->
+        <!-- Editable Profile Image -->
         <c-c84-user-profile-image></c-c84-user-profile-image>
-        
-    <!--<lightning-record-form
-    object-api-name='User'
-    record-id={currUserId}
-    fields={fields}
-    density = 'compact'
-    >
-</lightning-record-form>-->
-    <div class = "lr-fields slds-m-top_large slds-m-left_large slds-m-right_large" >
-    <lightning-record-edit-form
-        object-api-name="User"
-        onsuccess={handleSuccess}
-        record-id={currUserId}
-        density = "compact">
-        <div class="slds-form_horizontal slds-form slds-grid slds-wrap" >
-            <template for:each={fields} for:item="field">
-                
-                <div class='slds-size_1-of-2' key={field}>
-                <div class="slds-m-around_x-small">    
-                <label for={field.fieldApiName}>{field.fieldLabelName}</label>
-                <lightning-input-field  id = {field.fieldApiName} field-name={field.fieldApiName} read-only = {isReadOnly}  variant="label-hidden" ></lightning-input-field>
-                
-                <template if:true={isReadOnly}>
-                <a href="#"  onclick = {handleEditField} > <lightning-icon icon-name="utility:edit" class = "ld-edit" alternative-text="Edit" title="Edit" size="xx-small"></lightning-icon></a>
-                </template>
+        <!-- User fieled values for the mentioned fieldset -->
+        <div class="lr-fields slds-m-top_large slds-m-left_large slds-m-right_large">
+            <lightning-record-edit-form object-api-name="User" onsuccess={handleSuccess} record-id={currUserId}
+                density="compact">
+                <div class="slds-form_horizontal slds-form slds-grid slds-wrap">
+                    <template for:each={fields} for:item="field">
+
+                        <div class='slds-size_1-of-2' key={field}>
+                            <div class="slds-m-around_x-small">
+                                <label for={field.fieldApiName}>{field.fieldLabelName}</label>
+                                <lightning-input-field id={field.fieldApiName} field-name={field.fieldApiName}
+                                    read-only={isReadOnly} variant="label-hidden"></lightning-input-field>
+
+                                <template if:true={isReadOnly}>
+                                    <a href="#" onclick={handleEditField}>
+                                        <lightning-icon icon-name="utility:edit" class="ld-edit" alternative-text="Edit"
+                                            title="Edit" size="xx-small"></lightning-icon>
+                                    </a>
+                                </template>
+                            </div>
+                        </div>
+
+                    </template>
+
                 </div>
-                </div>  
-                
-            </template> 
-            
+                <!-- Save and Cancel buttons -->
+                <template if:false={isReadOnly}>
+                    <lightning-button class="slds-var-m-top_small" type="submit" label="Save">
+                    </lightning-button>
+                    <lightning-button class="slds-var-m-top_small" type="submit" label="Cancel">
+                    </lightning-button>
+
+                </template>
+            </lightning-record-edit-form>
         </div>
-        <!--<div class="slds-form-element">
-            <label class="slds-form-element__label" for="text-input-id-2">First Name</label>
-            <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
-                <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" icon-name="utility:edit"></lightning-icon>
-                <input type="text" id="text-input-id-2" placeholder="Enter Your Email" class="slds-input" />
-            </div>
-        </div>
-        <template for:each={fields} for:item="field">
-            
-            <lightning-input-field  class = "profile-edit-fields" read-only={isReadOnly} field-name={field.fieldApiName}  key = {field}></lightning-input-field>
-            <template if:true={isReadOnly}>
-            <a href="#" key = {field} onclick = {handleEditField} > <lightning-icon icon-name="utility:edit" class = "ld-edit" alternative-text="Edit" title="Edit" size="xx-small"></lightning-icon></a>
-            </template>
-        </template>    -->
-        <template if:false={isReadOnly}>
-        <lightning-button class="slds-var-m-top_small" type="submit" label="Save">
-        </lightning-button>
-        <lightning-button class="slds-var-m-top_small" type="submit" label="Cancel">
-        </lightning-button>
-        
-        </template>
-    </lightning-record-edit-form>
-    </div>   
-    
-</article>
+
+    </article>
 </template>

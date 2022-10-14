@@ -1,0 +1,11 @@
+.slds-modal__header .slds-modal__close{
+    top: 0.5rem!important;
+    right: 0.5rem!important;
+}
+.slds-modal__footer .slds-button+.slds-button{
+    background: #BE266A;
+    color: #fff;
+}
+.slds-modal__footer .slds-button_neutral{
+    color: #BE266A;
+}
