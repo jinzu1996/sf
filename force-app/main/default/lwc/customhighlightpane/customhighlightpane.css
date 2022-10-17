@@ -11,6 +11,18 @@
 {
   padding-left : 0%;
 }
+.slds-form-element__static 
+{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  display: inline-block;
+  font-size: .875rem;
+  font-weight: 400;
+  /* color: #181818; */
+  width: 100%;
+
+}
 .lightning-formatted-text.slds-form-element__static {
   font-family: 'cursive' important;
 }
